@@ -138,7 +138,7 @@ class _CategoryState extends State<Category> {
                                                             .newsDes
                                                             .length >
                                                         50
-                                                    ? "${newsModelList[index].newsDes.substring(0, 55)}...."
+                                                    ? "${newsModelList[index].newsDes.substring(0, 40)}...."
                                                     : newsModelList[index]
                                                         .newsDes,
                                                 style: TextStyle(

@@ -298,7 +298,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                                                 .newsDes
                                                                 .length >
                                                             50
-                                                        ? "${newsModelList[index].newsDes.substring(0, 55)}...."
+                                                        ? "${newsModelList[index].newsDes.substring(0, 40)}...."
                                                         : newsModelList[index]
                                                             .newsDes,
                                                     style: TextStyle(
@@ -317,7 +317,15 @@ class _HomeScreenState extends State<HomeScreen> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         ElevatedButton(
-                            onPressed: () {}, child: Text("Show More")),
+                          onPressed: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) =>
+                                        Category(Query: "Technology")));
+                          },
+                          child: Text("Show More"),
+                        ),
                       ],
                     ),
                   )
