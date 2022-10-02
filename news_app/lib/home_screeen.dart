@@ -30,7 +30,7 @@ class _HomeScreenState extends State<HomeScreen> {
   bool isLoading = true;
   getNewsByQuery(String query) async {
     String url =
-        "https://newsapi.org/v2/everything?q=$query&from=2022-08-29&sortBy=publishedAt&apiKey=bb3ffcaf97ca4859bb7b31080846a2f3";
+        "https://newsapi.org/v2/everything?q=$query&from=2022-09-02&sortBy=publishedAt&apiKey=bb3ffcaf97ca4859bb7b31080846a2f3";
     Response response = await get(Uri.parse(url));
     Map data = jsonDecode(response.body);
     setState(() {
@@ -97,7 +97,11 @@ class _HomeScreenState extends State<HomeScreen> {
                       if ((searchController.text).replaceAll(" ", "") == "") {
                         print("Blank search");
                       } else {
-                        // Navigator.push(context, MaterialPageRoute(builder: (context) => Search(searchController.text)));
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) =>
+                                    Category(Query: searchController.text)));
                       }
                     },
                     child: Container(
@@ -113,7 +117,10 @@ class _HomeScreenState extends State<HomeScreen> {
                       controller: searchController,
                       textInputAction: TextInputAction.search,
                       onSubmitted: (value) {
-                        print(value);
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => Category(Query: value)));
                       },
                       decoration: InputDecoration(
                           border: InputBorder.none, hintText: "Search $news"),

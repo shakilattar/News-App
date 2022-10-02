@@ -23,7 +23,7 @@ class _CategoryState extends State<Category> {
           "https://newsapi.org/v2/top-headlines?country=in&apiKey=bb3ffcaf97ca4859bb7b31080846a2f3";
     } else {
       url =
-          "https://newsapi.org/v2/everything?q=$query&from=2022-08-30&sortBy=publishedAt&apiKey=bb3ffcaf97ca4859bb7b31080846a2f3";
+          "https://newsapi.org/v2/everything?q=$query&from=2022-09-02&sortBy=publishedAt&apiKey=bb3ffcaf97ca4859bb7b31080846a2f3";
     }
 
     Response response = await get(Uri.parse(url));
